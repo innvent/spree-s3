@@ -9,7 +9,7 @@ module SpreeS3
     def self.activate
       S3.load_s3_yaml
 
-      Image.class_eval do
+      Spree::Image.class_eval do
         extend S3::Attachment
         sends_files_to_s3 if S3.enabled?
       end
