@@ -36,7 +36,7 @@ module S3
 
   module Attachment
     def sends_files_to_s3
-      [:attachment, :icon].each do |type|
+      [:attachment, :icon, :logo].each do |type|
         definition = self.attachment_definitions[type]
         configure_definition_for_s3(definition) if definition
       end
